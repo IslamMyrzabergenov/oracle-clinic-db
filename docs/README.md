@@ -154,7 +154,7 @@ CASE
 COUNT
 SUM
 AVG
-MAX
+MAX.
 
 ## Автор:
 Ислам Мырзабергенов

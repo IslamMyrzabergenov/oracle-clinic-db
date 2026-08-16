@@ -70,3 +70,13 @@ WHERE p.patient_id IN (
     FROM medical_records mr
 )
 ORDER BY p.last_name;
+
+SELECT
+    payment_method,
+    COUNT(payment_id) AS payment_count,
+    SUM(amount) AS total_revenue,
+    AVG(amount) AS average_payment
+FROM payments
+WHERE status = 'PAID'
+GROUP BY payment_method
+ORDER BY total_revenue DESC;

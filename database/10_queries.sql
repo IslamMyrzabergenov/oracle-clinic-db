@@ -13,3 +13,20 @@ JOIN doctors d
 JOIN specializations s
     ON d.specialization_id = s.specialization_id
 ORDER BY a.appointment_date;
+
+SELECT
+    d.doctor_id,
+    d.first_name || ' ' || d.last_name AS doctor_name,
+    s.name AS specialization,
+    COUNT(a.appointment_id) AS appointment_count
+FROM doctors d
+JOIN specializations s
+    ON d.specialization_id = s.specialization_id
+LEFT JOIN appointments a
+    ON d.doctor_id = a.doctor_id
+GROUP BY
+    d.doctor_id,
+    d.first_name,
+    d.last_name,
+    s.name
+ORDER BY appointment_count DESC;

@@ -53,3 +53,36 @@ BEGIN
     COMMIT;
 END;
 /
+
+CREATE OR REPLACE PROCEDURE cancel_appointment (
+    p_appointment_id IN NUMBER
+)
+AS
+    v_status appointments.status%TYPE;
+BEGIN
+    SELECT status
+    INTO v_status
+    FROM appointments
+    WHERE appointment_id = p_appointment_id;
+
+    IF v_status = 'COMPLETED' THEN
+        RAISE_APPLICATION_ERROR(
+            -20001,
+            'Completed appointment cannot be cancelled'
+        );
+    END IF;
+
+    UPDATE appointments
+    SET status = 'CANCELLED'
+    WHERE appointment_id = p_appointment_id;
+
+    COMMIT;
+
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        RAISE_APPLICATION_ERROR(
+            -20002,
+            'Appointment not found'
+        );
+END;
+/

@@ -117,3 +117,53 @@ INSERT INTO appointments
 VALUES
     (10, 5, TO_TIMESTAMP('2026-08-21 16:30:00', 'YYYY-MM-DD HH24:MI:SS'),
      'SCHEDULED', 'Pre-surgery consultation');
+
+INSERT INTO medical_records
+    (patient_id, doctor_id, diagnosis, treatment)
+VALUES
+    (1, 1, 'Hypertension', 'Blood pressure monitoring and lifestyle changes');
+
+INSERT INTO medical_records
+    (patient_id, doctor_id, diagnosis, treatment)
+VALUES
+    (2, 2, 'Dental caries', 'Dental filling');
+
+INSERT INTO medical_records
+    (patient_id, doctor_id, diagnosis, treatment)
+VALUES
+    (3, 3, 'Migraine', 'Pain management and rest');
+
+INSERT INTO medical_records
+    (patient_id, doctor_id, diagnosis, treatment)
+VALUES
+    (4, 4, 'Seasonal allergy', 'Antihistamine treatment');
+
+INSERT INTO medical_records
+    (patient_id, doctor_id, diagnosis, treatment)
+VALUES
+    (5, 5, 'Appendicitis', 'Surgical treatment');
+
+INSERT INTO medical_records
+    (patient_id, doctor_id, diagnosis, treatment)
+VALUES
+    (6, 1, 'Arrhythmia', 'Cardiac monitoring');
+
+INSERT INTO medical_records
+    (patient_id, doctor_id, diagnosis, treatment)
+VALUES
+    (7, 4, 'Gastritis', 'Dietary changes and medication');
+
+INSERT INTO medical_records
+    (patient_id, doctor_id, diagnosis, treatment)
+VALUES
+    (8, 2, 'Gingivitis', 'Professional dental cleaning');
+
+INSERT INTO medical_records
+    (patient_id, doctor_id, diagnosis, treatment)
+VALUES
+    (9, 3, 'Tension headache', 'Pain management');
+
+INSERT INTO medical_records
+    (patient_id, doctor_id, diagnosis, treatment)
+VALUES
+    (10, 5, 'Hernia', 'Surgical evaluation');

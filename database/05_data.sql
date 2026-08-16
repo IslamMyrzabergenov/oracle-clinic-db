@@ -57,3 +57,63 @@ VALUES ('Henry', 'Thompson', TO_DATE('1990-02-14', 'YYYY-MM-DD'), '+77010000009'
 
 INSERT INTO patients (first_name, last_name, birth_date, phone, email)
 VALUES ('Mia', 'Garcia', TO_DATE('1997-10-19', 'YYYY-MM-DD'), '+77010000010', 'mia.garcia@email.com');
+
+INSERT INTO appointments
+    (patient_id, doctor_id, appointment_date, status, notes)
+VALUES
+    (1, 1, TO_TIMESTAMP('2026-08-18 09:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+     'SCHEDULED', 'Regular consultation');
+
+INSERT INTO appointments
+    (patient_id, doctor_id, appointment_date, status, notes)
+VALUES
+    (2, 2, TO_TIMESTAMP('2026-08-18 10:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+     'SCHEDULED', 'Dental examination');
+
+INSERT INTO appointments
+    (patient_id, doctor_id, appointment_date, status, notes)
+VALUES
+    (3, 3, TO_TIMESTAMP('2026-08-18 12:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+     'COMPLETED', 'Neurological consultation');
+
+INSERT INTO appointments
+    (patient_id, doctor_id, appointment_date, status, notes)
+VALUES
+    (4, 4, TO_TIMESTAMP('2026-08-19 09:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+     'SCHEDULED', 'General examination');
+
+INSERT INTO appointments
+    (patient_id, doctor_id, appointment_date, status, notes)
+VALUES
+    (5, 5, TO_TIMESTAMP('2026-08-19 11:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+     'COMPLETED', 'Surgical consultation');
+
+INSERT INTO appointments
+    (patient_id, doctor_id, appointment_date, status, notes)
+VALUES
+    (6, 1, TO_TIMESTAMP('2026-08-19 14:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+     'SCHEDULED', 'Cardiology follow-up');
+
+INSERT INTO appointments
+    (patient_id, doctor_id, appointment_date, status, notes)
+VALUES
+    (7, 4, TO_TIMESTAMP('2026-08-20 10:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+     'CANCELLED', 'Patient cancelled appointment');
+
+INSERT INTO appointments
+    (patient_id, doctor_id, appointment_date, status, notes)
+VALUES
+    (8, 2, TO_TIMESTAMP('2026-08-20 13:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+     'SCHEDULED', 'Follow-up dental visit');
+
+INSERT INTO appointments
+    (patient_id, doctor_id, appointment_date, status, notes)
+VALUES
+    (9, 3, TO_TIMESTAMP('2026-08-21 15:00:00', 'YYYY-MM-DD HH24:MI:SS'),
+     'COMPLETED', 'Headache evaluation');
+
+INSERT INTO appointments
+    (patient_id, doctor_id, appointment_date, status, notes)
+VALUES
+    (10, 5, TO_TIMESTAMP('2026-08-21 16:30:00', 'YYYY-MM-DD HH24:MI:SS'),
+     'SCHEDULED', 'Pre-surgery consultation');

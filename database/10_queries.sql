@@ -44,3 +44,18 @@ GROUP BY
     d.last_name
 HAVING COUNT(a.appointment_id) > 1
 ORDER BY appointment_count DESC;
+
+SELECT
+    patient_id,
+    first_name || ' ' || last_name AS patient_name,
+    birth_date,
+    TRUNC(MONTHS_BETWEEN(SYSDATE, birth_date) / 12) AS age,
+    CASE
+        WHEN TRUNC(MONTHS_BETWEEN(SYSDATE, birth_date) / 12) < 18
+            THEN 'Young'
+        WHEN TRUNC(MONTHS_BETWEEN(SYSDATE, birth_date) / 12) < 60
+            THEN 'Adult'
+        ELSE 'Senior'
+    END AS age_category
+FROM patients
+ORDER BY age DESC;

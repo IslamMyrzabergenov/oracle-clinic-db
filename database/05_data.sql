@@ -231,3 +231,53 @@ INSERT INTO prescriptions
     (patient_id, doctor_id, medication_id, dosage, frequency, start_date, end_date)
 VALUES
     (8, 2, 1, '500 mg', 'Twice daily', TO_DATE('2026-08-21', 'YYYY-MM-DD'), TO_DATE('2026-08-28', 'YYYY-MM-DD'));
+
+INSERT INTO payments
+    (appointment_id, amount, payment_method, status)
+VALUES
+    (1, 15000.00, 'CARD', 'PAID');
+
+INSERT INTO payments
+    (appointment_id, amount, payment_method, status)
+VALUES
+    (2, 12000.00, 'CASH', 'PAID');
+
+INSERT INTO payments
+    (appointment_id, amount, payment_method, status)
+VALUES
+    (3, 18000.00, 'TRANSFER', 'PAID');
+
+INSERT INTO payments
+    (appointment_id, amount, payment_method, status)
+VALUES
+    (4, 10000.00, 'CARD', 'PENDING');
+
+INSERT INTO payments
+    (appointment_id, amount, payment_method, status)
+VALUES
+    (5, 25000.00, 'TRANSFER', 'PAID');
+
+INSERT INTO payments
+    (appointment_id, amount, payment_method, status)
+VALUES
+    (6, 20000.00, 'CARD', 'PAID');
+
+INSERT INTO payments
+    (appointment_id, amount, payment_method, status)
+VALUES
+    (7, 9000.00, 'CASH', 'REFUNDED');
+
+INSERT INTO payments
+    (appointment_id, amount, payment_method, status)
+VALUES
+    (8, 13000.00, 'CARD', 'PAID');
+
+INSERT INTO payments
+    (appointment_id, amount, payment_method, status)
+VALUES
+    (9, 17000.00, 'TRANSFER', 'PAID');
+
+INSERT INTO payments
+    (appointment_id, amount, payment_method, status)
+VALUES
+    (10, 22000.00, 'CARD', 'PENDING');

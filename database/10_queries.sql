@@ -59,3 +59,14 @@ SELECT
     END AS age_category
 FROM patients
 ORDER BY age DESC;
+
+SELECT
+    p.patient_id,
+    p.first_name || ' ' || p.last_name AS patient_name,
+    p.email
+FROM patients p
+WHERE p.patient_id IN (
+    SELECT mr.patient_id
+    FROM medical_records mr
+)
+ORDER BY p.last_name;

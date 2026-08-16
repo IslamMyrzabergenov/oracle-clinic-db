@@ -80,3 +80,71 @@ FROM payments
 WHERE status = 'PAID'
 GROUP BY payment_method
 ORDER BY total_revenue DESC;
+
+SELECT
+    s.name AS specialization,
+    COUNT(pay.payment_id) AS paid_payments,
+    SUM(pay.amount) AS total_revenue
+FROM specializations s
+JOIN doctors d
+    ON s.specialization_id = d.specialization_id
+JOIN appointments a
+    ON d.doctor_id = a.doctor_id
+JOIN payments pay
+    ON a.appointment_id = pay.appointment_id
+WHERE pay.status = 'PAID'
+GROUP BY s.name
+ORDER BY total_revenue DESC;
+
+SELECT
+    p.patient_id,
+    p.first_name || ' ' || p.last_name AS patient_name,
+    COUNT(a.appointment_id) AS appointment_count
+FROM patients p
+LEFT JOIN appointments a
+    ON p.patient_id = a.patient_id
+GROUP BY
+    p.patient_id,
+    p.first_name,
+    p.last_name
+ORDER BY appointment_count DESC;
+
+SELECT
+    a.appointment_id,
+    p.first_name || ' ' || p.last_name AS patient_name,
+    d.first_name || ' ' || d.last_name AS doctor_name,
+    a.appointment_date,
+    a.notes
+FROM appointments a
+JOIN patients p
+    ON a.patient_id = p.patient_id
+JOIN doctors d
+    ON a.doctor_id = d.doctor_id
+WHERE a.status = 'COMPLETED'
+ORDER BY a.appointment_date DESC;
+
+SELECT
+    p.first_name || ' ' || p.last_name AS patient_name,
+    m.name AS medication,
+    pr.dosage,
+    pr.frequency,
+    pr.start_date,
+    pr.end_date
+FROM prescriptions pr
+JOIN patients p
+    ON pr.patient_id = p.patient_id
+JOIN medications m
+    ON pr.medication_id = m.medication_id
+ORDER BY p.last_name, pr.start_date;
+
+SELECT
+    payment_id,
+    appointment_id,
+    amount,
+    payment_method,
+    status
+FROM payments
+WHERE amount = (
+    SELECT MAX(amount)
+    FROM payments
+);

@@ -25,3 +25,31 @@ BEGIN
     COMMIT;
 END;
 /
+
+CREATE OR REPLACE PROCEDURE create_appointment (
+    p_patient_id       IN NUMBER,
+    p_doctor_id        IN NUMBER,
+    p_appointment_date IN TIMESTAMP,
+    p_status            IN VARCHAR2 DEFAULT 'SCHEDULED',
+    p_notes             IN VARCHAR2 DEFAULT NULL
+)
+AS
+BEGIN
+    INSERT INTO appointments (
+        patient_id,
+        doctor_id,
+        appointment_date,
+        status,
+        notes
+    )
+    VALUES (
+        p_patient_id,
+        p_doctor_id,
+        p_appointment_date,
+        p_status,
+        p_notes
+    );
+
+    COMMIT;
+END;
+/

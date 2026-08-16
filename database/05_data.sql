@@ -167,3 +167,27 @@ INSERT INTO medical_records
     (patient_id, doctor_id, diagnosis, treatment)
 VALUES
     (10, 5, 'Hernia', 'Surgical evaluation');
+
+INSERT INTO medications (name, description, price)
+VALUES ('Paracetamol', 'Pain reliever and fever reducer', 1500.00);
+
+INSERT INTO medications (name, description, price)
+VALUES ('Ibuprofen', 'Pain reliever and anti-inflammatory medicine', 1800.00);
+
+INSERT INTO medications (name, description, price)
+VALUES ('Aspirin', 'Medicine used for pain and cardiovascular conditions', 1200.00);
+
+INSERT INTO medications (name, description, price)
+VALUES ('Loratadine', 'Antihistamine for allergy symptoms', 2500.00);
+
+INSERT INTO medications (name, description, price)
+VALUES ('Omeprazole', 'Medicine used to reduce stomach acid', 2200.00);
+
+INSERT INTO medications (name, description, price)
+VALUES ('Amoxicillin', 'Antibiotic medication', 3500.00);
+
+INSERT INTO medications (name, description, price)
+VALUES ('Metformin', 'Medicine used to control blood sugar', 2800.00);
+
+INSERT INTO medications (name, description, price)
+VALUES ('Atorvastatin', 'Medicine used to lower cholesterol', 4200.00);

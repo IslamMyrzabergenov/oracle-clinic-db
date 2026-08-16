@@ -14,3 +14,20 @@ JOIN doctors d
     ON a.doctor_id = d.doctor_id
 JOIN specializations s
     ON d.specialization_id = s.specialization_id;
+
+CREATE OR REPLACE VIEW v_medical_records AS
+SELECT
+    mr.record_id,
+    p.first_name || ' ' || p.last_name AS patient_name,
+    d.first_name || ' ' || d.last_name AS doctor_name,
+    s.name AS specialization,
+    mr.diagnosis,
+    mr.treatment,
+    mr.record_date
+FROM medical_records mr
+JOIN patients p
+    ON mr.patient_id = p.patient_id
+JOIN doctors d
+    ON mr.doctor_id = d.doctor_id
+JOIN specializations s
+    ON d.specialization_id = s.specialization_id;

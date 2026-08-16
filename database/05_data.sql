@@ -191,3 +191,43 @@ VALUES ('Metformin', 'Medicine used to control blood sugar', 2800.00);
 
 INSERT INTO medications (name, description, price)
 VALUES ('Atorvastatin', 'Medicine used to lower cholesterol', 4200.00);
+
+INSERT INTO prescriptions
+    (patient_id, doctor_id, medication_id, dosage, frequency, start_date, end_date)
+VALUES
+    (1, 1, 3, '100 mg', 'Once daily', TO_DATE('2026-08-18', 'YYYY-MM-DD'), TO_DATE('2026-09-18', 'YYYY-MM-DD'));
+
+INSERT INTO prescriptions
+    (patient_id, doctor_id, medication_id, dosage, frequency, start_date, end_date)
+VALUES
+    (2, 2, 1, '500 mg', 'Twice daily', TO_DATE('2026-08-18', 'YYYY-MM-DD'), TO_DATE('2026-08-25', 'YYYY-MM-DD'));
+
+INSERT INTO prescriptions
+    (patient_id, doctor_id, medication_id, dosage, frequency, start_date, end_date)
+VALUES
+    (3, 3, 2, '400 mg', 'Three times daily', TO_DATE('2026-08-19', 'YYYY-MM-DD'), TO_DATE('2026-08-26', 'YYYY-MM-DD'));
+
+INSERT INTO prescriptions
+    (patient_id, doctor_id, medication_id, dosage, frequency, start_date, end_date)
+VALUES
+    (4, 4, 4, '10 mg', 'Once daily', TO_DATE('2026-08-19', 'YYYY-MM-DD'), TO_DATE('2026-09-02', 'YYYY-MM-DD'));
+
+INSERT INTO prescriptions
+    (patient_id, doctor_id, medication_id, dosage, frequency, start_date, end_date)
+VALUES
+    (5, 5, 6, '500 mg', 'Twice daily', TO_DATE('2026-08-20', 'YYYY-MM-DD'), TO_DATE('2026-08-27', 'YYYY-MM-DD'));
+
+INSERT INTO prescriptions
+    (patient_id, doctor_id, medication_id, dosage, frequency, start_date, end_date)
+VALUES
+    (6, 1, 3, '100 mg', 'Once daily', TO_DATE('2026-08-20', 'YYYY-MM-DD'), TO_DATE('2026-09-20', 'YYYY-MM-DD'));
+
+INSERT INTO prescriptions
+    (patient_id, doctor_id, medication_id, dosage, frequency, start_date, end_date)
+VALUES
+    (7, 4, 5, '20 mg', 'Once daily', TO_DATE('2026-08-21', 'YYYY-MM-DD'), TO_DATE('2026-09-04', 'YYYY-MM-DD'));
+
+INSERT INTO prescriptions
+    (patient_id, doctor_id, medication_id, dosage, frequency, start_date, end_date)
+VALUES
+    (8, 2, 1, '500 mg', 'Twice daily', TO_DATE('2026-08-21', 'YYYY-MM-DD'), TO_DATE('2026-08-28', 'YYYY-MM-DD'));
